@@ -3,9 +3,9 @@ defmodule Loupe.TransactionController do
   alias Loupe.Transaction
 
   def index(conn, _params) do
-    transaction = Repo.all Transaction
+    transactions = Repo.all Transaction
 
-    json conn, %{data: transaction}
+    json conn, %{data: transactions}
   end
 
   def show(conn, %{"id" => id}) do
