@@ -11,7 +11,7 @@ defmodule Loupe.Transaction do
   end
 
   @required_fields ~w(buyer seller item price)
-  @optional_fields
+  @optional_fields ~w()
 
   def changeset(model, params) do
     model
