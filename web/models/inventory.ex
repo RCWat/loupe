@@ -7,6 +7,8 @@ defmodule Loupe.Inventory do
     field :quantity, :integer
     field :department, :string
     field :vendor, :string # TODO: should belongs_to a Loupe.Vendor
+
+    timestamps
   end
 
   @required_fields ~w(name unit_price quantity department)
