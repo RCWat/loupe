@@ -7,5 +7,9 @@ defmodule Loupe.Router do
 
   scope "/api", Loupe do
     pipe_through :api
+
+    resources "/inventory", InventoryController, only: [:index, :show, :create, :delete]
+
+    resources "/transactions", TransactionController, only: [:index, :show, :create, :delete]
   end
 end
