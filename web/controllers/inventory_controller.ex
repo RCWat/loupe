@@ -18,11 +18,8 @@ defmodule Loupe.InventoryController do
     changeset = Inventory.changeset %Inventory{}, inventory_params
 
     case Repo.insert changeset do
-      {:ok, inventory} ->
-        json conn, "ok"
-
-      {:error, _changeset} ->
-        json conn, "error"
+      {:ok, _inventory}    -> json conn, "ok"
+      {:error, _changeset} -> json conn, "error"
     end
   end
 

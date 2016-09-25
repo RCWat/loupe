@@ -18,11 +18,8 @@ defmodule Loupe.TransactionController do
     changeset = Transaction.changeset %Transaction{}, transaction_params
 
     case Repo.insert changeset do
-      {:ok, transaction} ->
-        json conn, "ok"
-
-      {:error, _changeset} ->
-        json conn, "error"
+      {:ok, _transaction}  -> json conn, "ok"
+      {:error, _changeset} -> json conn, "error"
     end
   end
 

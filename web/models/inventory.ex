@@ -3,10 +3,20 @@ defmodule Loupe.Inventory do
 
   schema "inventory" do
     field :name, :string
-    field :unit_price, :float
+    field :group_id, :string
+    field :serial_number, :string
+    field :description, :string
+    field :department, :string # TODO: Loupe.Department?
+    field :type, :string
+    field :metal, :string
+    field :stone, :string
+    field :size, :float
+    field :wholesale_price, :float
+    field :retail_price, :float
     field :quantity, :integer
-    field :department, :string
-    field :vendor, :string # TODO: should belongs_to a Loupe.Vendor
+    field :image_url, :string
+
+    belongs_to :order_id, Loupe.Order
 
     timestamps
   end

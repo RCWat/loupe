@@ -10,5 +10,6 @@ defmodule Loupe.Router do
 
     resources "/inventory",    InventoryController,   only: [:index, :show, :create, :delete]
     resources "/transactions", TransactionController, only: [:index, :show, :create, :delete]
+    resources "/orders",       OrderController,       only: [:index, :show, :create, :delete]
   end
 end
