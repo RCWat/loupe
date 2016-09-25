@@ -1,6 +1,8 @@
 defmodule Loupe.Transaction do
   use Loupe.Web, :model
 
+  @derive {Poison.Encoder, except: [:__meta__]}
+
   schema "transactions" do
     field :buyer, :string # TODO: should belongs_to a user
     field :seller, :string # TODO: see above

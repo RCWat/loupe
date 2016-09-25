@@ -1,6 +1,8 @@
 defmodule Loupe.Inventory do
   use Loupe.Web, :model
 
+  @derive {Poison.Encoder, except: [:__meta__]}
+
   schema "inventory" do
     field :name, :string
     field :quantity, :integer

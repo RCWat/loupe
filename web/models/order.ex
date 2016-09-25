@@ -1,6 +1,8 @@
 defmodule Loupe.Order do
   use Loupe.Web, :model
 
+  @derive {Poison.Encoder, except: [:__meta__]}
+
   schema "orders" do
     field :price, :float
     field :vendor, :string # belongs_to Loupe.Vendor
