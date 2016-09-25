@@ -12,8 +12,8 @@ defmodule Loupe.Inventory do
     field :metal, :string
     field :stone, :string
     field :size, :float
-    field :wholesale_price, :float
-    field :retail_price, :float
+    field :wholesale_price, :integer
+    field :retail_price, :integer
     field :image_url, :string
 
     belongs_to :order_id, Loupe.Order
@@ -22,7 +22,7 @@ defmodule Loupe.Inventory do
   end
 
   @required_fields ~w(name quantity retail_price)
-  @optional_fields ~w(group_id serial_number description department type 
+  @optional_fields ~w(group_id serial_number description department type
                       metal stone size wholesale_price image_url order_id)
 
   def changeset(model, params) do

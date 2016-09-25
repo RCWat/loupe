@@ -5,7 +5,7 @@ defmodule Loupe.Transaction do
     field :buyer, :string # TODO: should belongs_to a user
     field :seller, :string # TODO: see above
     field :item, :string
-    field :price, :float
+    field :price, :integer
 
     timestamps
   end
