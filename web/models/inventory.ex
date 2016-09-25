@@ -16,7 +16,7 @@ defmodule Loupe.Inventory do
     field :retail_price, :integer
     field :image_url, :string
 
-    belongs_to :order_id, Loupe.Order
+    belongs_to :order, Loupe.Order
 
     timestamps
   end
