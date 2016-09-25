@@ -5,13 +5,13 @@ defmodule Loupe.OrderController do
   def index(conn, _params) do
     orders = Repo.all Order
 
-    json conn, %{data: orders}
+    render conn, "index.json", orders: orders
   end
 
   def show(conn, %{"id" => id}) do
     order = Repo.get! Order, id
 
-    json conn, %{data: order}
+    render conn, "show.json", order: order
   end
 
   def create(conn, %{"order" => order_params}) do

@@ -5,13 +5,13 @@ defmodule Loupe.TransactionController do
   def index(conn, _params) do
     transactions = Repo.all Transaction
 
-    json conn, %{data: transactions}
+    render conn, "index.json", transactions: transactions
   end
 
   def show(conn, %{"id" => id}) do
     transaction = Repo.get! Transaction, id
 
-    json conn, %{data: transaction}
+    render conn, "show.json", transaction: transaction
   end
 
   def create(conn, %{"transaction" => transaction_params}) do

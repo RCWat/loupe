@@ -5,13 +5,13 @@ defmodule Loupe.InventoryController do
   def index(conn, _params) do
     inventory = Repo.all Inventory
 
-    json conn, %{data: inventory}
+    render conn, "index.json", inventory: inventory
   end
 
   def show(conn, %{"id" => id}) do
     inventory = Repo.get! Inventory, id
 
-    json conn, %{data: inventory}
+    render conn, "show.json", inventory: inventory
   end
 
   def create(conn, %{"inventory" => inventory_params}) do
