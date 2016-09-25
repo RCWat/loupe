@@ -3,6 +3,7 @@ defmodule Loupe.Inventory do
 
   schema "inventory" do
     field :name, :string
+    field :quantity, :integer
     field :group_id, :string
     field :serial_number, :string
     field :description, :string
@@ -13,7 +14,6 @@ defmodule Loupe.Inventory do
     field :size, :float
     field :wholesale_price, :float
     field :retail_price, :float
-    field :quantity, :integer
     field :image_url, :string
 
     belongs_to :order_id, Loupe.Order
@@ -21,8 +21,9 @@ defmodule Loupe.Inventory do
     timestamps
   end
 
-  @required_fields ~w(name unit_price quantity department)
-  @optional_fields ~w()
+  @required_fields ~w(name quantity retail_price)
+  @optional_fields ~w(group_id serial_number description department type 
+                      metal stone size wholesale_price image_url order_id)
 
   def changeset(model, params) do
     model
