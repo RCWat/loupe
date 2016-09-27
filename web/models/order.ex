@@ -4,17 +4,18 @@ defmodule Loupe.Order do
   @derive {Poison.Encoder, except: [:__meta__]}
 
   schema "orders" do
-    field :price, :float
-    field :vendor, :string # belongs_to Loupe.Vendor
+    field :price, :integer
     field :date_ordered, Ecto.DateTime
     field :date_received, Ecto.DateTime
+
+    belongs_to :supplier, Loupe.Supplier
 
     has_many :inventory, Loupe.Inventory
 
     timestamps
   end
 
-  @required_fields ~w(price vendor date_ordered inventory)
+  @required_fields ~w(price supplier date_ordered inventory)
   @optional_fields ~w(date_received)
 
   def changeset(model, params) do
