@@ -1,9 +1,0 @@
-server starting
-LOG:  database system was shut down at 2016-09-25 21:36:33 CDT
-LOG:  MultiXact member wraparound protections are now enabled
-LOG:  database system is ready to accept connections
-LOG:  autovacuum launcher started
-ERROR:  column o0.supplier_id does not exist at character 68
-STATEMENT:  SELECT o0."id", o0."price", o0."date_ordered", o0."date_received", o0."supplier_id", o0."inserted_at", o0."updated_at" FROM "orders" AS o0
-ERROR:  column "item_id" of relation "transactions" does not exist
-STATEMENT:  ALTER TABLE "transactions" DROP COLUMN "seller_id", DROP COLUMN "buyer_id", ALTER COLUMN "item_id" TYPE integer , ADD CONSTRAINT "transactions_item_id_fkey" FOREIGN KEY ("item_id") REFERENCES "inventory"("id")
