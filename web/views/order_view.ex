@@ -13,7 +13,6 @@ defmodule Loupe.OrderView do
     %{
       id: order.id,
       price: order.price,
-      vendor_id: order.vendor_id,
       date_ordered: order.date_ordered,
       date_received: order.date_received
     }
