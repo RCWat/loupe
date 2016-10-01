@@ -5,18 +5,6 @@ defmodule Loupe.RegistrationController do
 
   plug :scrub_params, "user" when action in [:create]
 
-  def index(conn, _params) do
-    registrations = Repo.all Registration
-
-    render conn, "index.json", registrations: registrations
-  end
-
-  def show(conn, %{"id" => id}) do
-    registration = Repo.get Registration, id
-
-    render conn, "show.json", registration: registration
-  end
-
   def create(conn, %{"user" => user_params}) do
     changeset = User.changeset %User{}, user_params
 
