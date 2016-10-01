@@ -14,7 +14,7 @@ defmodule Loupe.Router do
     resources "/transactions", TransactionController, only: [:index, :show, :create, :delete]
     resources "/orders",       OrderController,       only: [:index, :show, :create, :delete]
 
-    resources "/registrations", RegistrationController, only: [:index, :show, :create]
+    post "/registrations", RegistrationController, :create
 
     get "/current_user", CurrentUserController, :show
   end

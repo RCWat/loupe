@@ -15,7 +15,7 @@ defmodule Loupe.User do
   end
 
   @required_fields ~w(first_name last_name company email password)
-  @optional_fields ~w(encrypted_password)
+  @optional_fields ~w()
 
   def changeset(model, params \\ :empty) do
     model
