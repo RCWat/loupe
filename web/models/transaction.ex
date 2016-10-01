@@ -4,10 +4,9 @@ defmodule Loupe.Transaction do
   @derive {Poison.Encoder, except: [:__meta__]}
 
   schema "transactions" do
-    field :buyer_id, :integer # TODO: should belongs_to a user
-    field :seller, :string # TODO: see above
-    field :item, :string
     field :price, :integer
+
+    belongs_to :item, Loupe.Inventory
 
     timestamps
   end

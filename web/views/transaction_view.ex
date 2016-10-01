@@ -12,8 +12,6 @@ defmodule Loupe.TransactionView do
   def render("transaction.json", %{transaction: transaction}) do
     %{
       id: transaction.id,
-      buyer_id: transaction.buyer_id,
-      seller_id: transaction.seller_id,
       price: transaction.price
     }
   end

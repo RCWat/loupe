@@ -1,6 +1,9 @@
 {
   "repository": {
   },
+  "engines": {
+    "node": "5.5.0"
+  },
   "dependencies": {
     "babel-brunch": "~6.0.0",
     "brunch": "~2.1.3",
