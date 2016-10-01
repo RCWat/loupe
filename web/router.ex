@@ -3,6 +3,8 @@ defmodule Loupe.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.LoadResource
   end
 
   scope "/api", Loupe do
@@ -11,5 +13,9 @@ defmodule Loupe.Router do
     resources "/inventory",    InventoryController,   only: [:index, :show, :create, :delete]
     resources "/transactions", TransactionController, only: [:index, :show, :create, :delete]
     resources "/orders",       OrderController,       only: [:index, :show, :create, :delete]
+
+    resources "/registrations", RegistrationController, only: [:index, :show, :create]
+
+    get "/current_user", CurrentUserController, :show
   end
 end

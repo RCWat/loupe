@@ -1,11 +1,19 @@
 defmodule Mix.Tasks.Loupe.Seed do
   use Mix.Task
-  alias Loupe.{Inventory, Order, Repo, Transaction}
+  alias Loupe.{Inventory, Order, Repo, Transaction, User}
 
   @shortdoc "A mix task for seeding sample dev data"
 
   def run(_) do
     Mix.Task.run "app.start"
+
+    Enum.each(users,
+      fn(user) ->
+        changeset = User.changeset(%User{}, user)
+        with changeset.valid?,
+        do:  Repo.insert changeset
+      end
+    )
 
     Enum.each(inventory,
       fn(item) ->
@@ -30,6 +38,25 @@ defmodule Mix.Tasks.Loupe.Seed do
         do:  Repo.insert changeset
       end
     )
+  end
+
+  def users do
+    [
+      %{
+        first_name: "Clayton",
+        last_name: "Gentry",
+        company: "Swag Productions",
+        email: "clayton@clayton.com",
+        password: "1234password"
+      },
+      %{
+        first_name: "Ryan",
+        last_name: "Madden",
+        company: "OG Enterprises",
+        email: "ryan@ryan.com",
+        password: "4321password"
+      }
+    ]
   end
 
   def inventory do
