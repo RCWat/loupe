@@ -47,14 +47,14 @@ defmodule Mix.Tasks.Loupe.Seed do
         last_name: "Gentry",
         company: "Swag Productions",
         email: "clayton@clayton.com",
-        password: "1234password"
+        encrypted_password: "1234password"
       },
       %{
         first_name: "Ryan",
         last_name: "Madden",
         company: "OG Enterprises",
         email: "ryan@ryan.com",
-        password: "4321password"
+        encrypted_password: "4321password"
       }
     ]
   end
@@ -71,6 +71,7 @@ defmodule Mix.Tasks.Loupe.Seed do
         type: "product",
         metal: "stainless steel",
         stone: "pearl",
+        size: 13,
         wholesale_price: 34901,
         retail_price: 59815,
         image_url: "http://images.mulberry.com/s/mulberrygroup/QC0946_854C120_IS/square-tree-cufflinks",
@@ -86,6 +87,7 @@ defmodule Mix.Tasks.Loupe.Seed do
         type: "product",
         metal: "stainless steel",
         stone: "pearl",
+        size: 15,
         wholesale_price: 34901,
         retail_price: 59815,
         image_url: "http://images.mulberry.com/s/mulberrygroup/QC0946_854C120_IS/square-tree-cufflinks",
@@ -101,6 +103,7 @@ defmodule Mix.Tasks.Loupe.Seed do
         type: "product",
         metal: "stainless steel",
         stone: "pearl",
+        size: 17,
         wholesale_price: 34901,
         retail_price: 59815,
         image_url: "http://images.mulberry.com/s/mulberrygroup/QC0946_854C120_IS/square-tree-cufflinks",

@@ -12,8 +12,19 @@ defmodule Loupe.InventoryView do
   def render("inventory.json", %{inventory: inventory}) do
     %{
       id: inventory.id,
+      name: inventory.name,
+      quantity: inventory.quantity,
+      group_id: inventory.group_id,
+      serial_number: inventory.serial_number,
       description: inventory.description,
-      price: inventory.retail_price
+      department: inventory.department,
+      type: inventory.type,
+      metal: inventory.metal,
+      stone: inventory.stone,
+      size: inventory.size,
+      wholesale_price: inventory.wholesale_price,
+      retail_price: inventory.retail_price,
+      image_url: inventory.image_url
     }
   end
 end
