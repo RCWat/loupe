@@ -5,14 +5,16 @@ defmodule Loupe.Transaction do
 
   schema "transactions" do
     field :price, :integer
+    field :notes, :string
+    field :customer_email, :string
 
-    belongs_to :item, Loupe.Inventory
+    has_many :inventory, Loupe.Inventory
 
     timestamps
   end
 
   @required_fields ~w(item price)
-  @optional_fields ~w()
+  @optional_fields ~w(customer_name customer_name notes)
 
   def changeset(model, params) do
     model

@@ -9,23 +9,28 @@ defmodule Loupe.Inventory do
     field :group_id, :string
     field :serial_number, :string
     field :description, :string
-    field :department, :string # TODO: Loupe.Department?
-    field :type, :string
     field :metal, :string
     field :stone, :string
+    field :carat, :float
+    field :clarity, :string
+    field :cut, :string
+    field :length, :integer
     field :size, :float
+    field :style_number, :integer
     field :wholesale_price, :integer
     field :retail_price, :integer
     field :image_url, :string
 
     belongs_to :order, Loupe.Order
 
+    belongs_to :transaction, Loupe.Transaction
+
     timestamps
   end
 
-  @required_fields ~w(name quantity retail_price)
-  @optional_fields ~w(group_id serial_number description department type
-                      metal stone size wholesale_price image_url order_id)
+  @required_fields ~w(name quantity group_id serial_number retail_price)
+  @optional_fields ~w(description metal stone carat clarity cut length
+                      size style_number wholesale_price image_url order transaction)
 
   def changeset(model, params) do
     model

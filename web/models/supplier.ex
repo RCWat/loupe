@@ -3,8 +3,11 @@ defmodule Loupe.Supplier do
 
   schema "suppliers" do
     field :name, :string
+    field :email, :string
+    field :phone, :integer
+    field :fax, :integer
 
-    has_many :users, Loupe.User
+    has_many :orders, Loupe.Order
 
     timestamps
   end
