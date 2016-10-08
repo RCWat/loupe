@@ -24,7 +24,10 @@ defmodule Loupe.InventoryView do
       size: inventory.size,
       wholesale_price: inventory.wholesale_price,
       retail_price: inventory.retail_price,
-      image_url: inventory.image_url
+      image_url: inventory.image_url,
+      transaction_id: inventory.transaction_id,
+      inserted_at: inventory.inserted_at,
+      updated_at: inventory.updated_at,
     }
   end
 end

@@ -23,14 +23,12 @@ defmodule Loupe.Inventory do
 
     belongs_to :order, Loupe.Order
 
-    belongs_to :transaction, Loupe.Transaction
-
     timestamps
   end
 
   @required_fields ~w(name quantity group_id serial_number retail_price)
   @optional_fields ~w(description metal stone carat clarity cut length
-                      size style_number wholesale_price image_url order transaction)
+                      size style_number wholesale_price image_url order)
 
   def changeset(model, params) do
     model
