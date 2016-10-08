@@ -15,7 +15,7 @@ defmodule Loupe.Order do
     timestamps
   end
 
-  @required_fields ~w(price supplier date_ordered)
+  @required_fields ~w(price supplier_id date_ordered)
   @optional_fields ~w(date_received)
 
   def changeset(model, params) do

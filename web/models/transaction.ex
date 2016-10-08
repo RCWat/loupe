@@ -13,8 +13,8 @@ defmodule Loupe.Transaction do
     timestamps
   end
 
-  @required_fields ~w(item price)
-  @optional_fields ~w(customer_name customer_name notes)
+  @required_fields ~w(price)
+  @optional_fields ~w(customer_email notes)
 
   def changeset(model, params) do
     model

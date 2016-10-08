@@ -33,7 +33,7 @@ defmodule Mix.Tasks.Loupe.Seed do
 
     Enum.each(transactions,
       fn(item) ->
-        changeset = Order.changeset(%Transaction{}, item)
+        changeset = Transaction.changeset(%Transaction{}, item)
         with changeset.valid?,
         do:  Repo.insert changeset
       end
@@ -69,7 +69,12 @@ defmodule Mix.Tasks.Loupe.Seed do
         description: "A pair of very nice cufflinks by Kent Wang",
         metal: "stainless steel",
         stone: "pearl",
-        size: 13,
+        carat: 17.55,
+        clarity: "vvs2",
+        cut: "oval",
+        length: nil,
+        size: nil,
+        style_number: 50,
         wholesale_price: 34901,
         retail_price: 59815,
         image_url: "http://images.mulberry.com/s/mulberrygroup/QC0946_854C120_IS/square-tree-cufflinks",
@@ -83,11 +88,16 @@ defmodule Mix.Tasks.Loupe.Seed do
         description: "A pair of very nice cufflinks by Kent Wang",
         metal: "stainless steel",
         stone: "pearl",
-        size: 15,
+        carat: 17.55,
+        clarity: "vvs2",
+        cut: "oval",
+        length: nil,
+        size: nil,
+        style_number: 50,
         wholesale_price: 34901,
         retail_price: 59815,
         image_url: "http://images.mulberry.com/s/mulberrygroup/QC0946_854C120_IS/square-tree-cufflinks",
-        order_id: 2
+        order_id: 1,
       },
       %{
         name: "Kent Wang pearl cufflinks",
@@ -97,11 +107,16 @@ defmodule Mix.Tasks.Loupe.Seed do
         description: "A pair of very nice cufflinks by Kent Wang",
         metal: "stainless steel",
         stone: "pearl",
-        size: 17,
+        carat: 17.55,
+        clarity: "vvs2",
+        cut: "oval",
+        length: nil,
+        size: nil,
+        style_number: 50,
         wholesale_price: 34901,
         retail_price: 59815,
         image_url: "http://images.mulberry.com/s/mulberrygroup/QC0946_854C120_IS/square-tree-cufflinks",
-        order_id: 2
+        order_id: 1,
       },
     ]
   end
@@ -110,13 +125,13 @@ defmodule Mix.Tasks.Loupe.Seed do
     [
       %{
         price: 193858,
-        vendor: "Jimmy John",
+        supplier_id: 1,
         date_ordered: Ecto.DateTime.cast("2014-04-17T14:00:00Z"),
         date_received: Ecto.DateTime.cast("2014-04-21T14:00:00Z")
       },
       %{
         price: 193858,
-        vendor: "Jimmy John",
+        supplier_id: 1,
         date_ordered: Ecto.DateTime.cast("2014-04-17T14:00:00Z"),
         date_received: Ecto.DateTime.cast("2014-04-21T14:00:00Z")
       }
@@ -126,16 +141,14 @@ defmodule Mix.Tasks.Loupe.Seed do
   def transactions do
     [
       %{
-        buyer: "Jimmy",
-        seller: "John",
-        item: "Kent Wang Pearl Cufflinks",
-        price: 59815
+        price: 150981,
+        notes: "These are some notes about the transaction.",
+        customer_email: "johndoe@gmail.com",
       },
       %{
-        buyer: "Jimmy",
-        seller: "John",
-        item: "Kent Wang Pearl Cufflinks",
-        price: 59815
+        price: 150981,
+        notes: "These are some notes about the transaction.",
+        customer_email: "johndoe@gmail.com",
       }
     ]
   end

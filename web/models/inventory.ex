@@ -28,7 +28,7 @@ defmodule Loupe.Inventory do
 
   @required_fields ~w(name quantity group_id serial_number retail_price)
   @optional_fields ~w(description metal stone carat clarity cut length
-                      size style_number wholesale_price image_url order)
+                      size style_number wholesale_price image_url order_id)
 
   def changeset(model, params) do
     model
