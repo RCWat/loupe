@@ -23,6 +23,19 @@ defmodule Loupe.InventoryController do
     end
   end
 
+  def update(conn, %{"id" => id, "inventory" => inventory_params}) do
+    inventory = Repo.get! Inventory, id
+    changeset = Inventory.changeset inventory, inventory_params
+
+    case Repo.update(changeset) do
+      {:ok, inventory}    ->
+        render conn, "show.json", inventory: inventory
+
+      {:error, changeset} ->
+        render conn, "error.json", %{error: changeset.errors}
+    end
+  end
+
   def delete(conn, %{"id" => id}) do
     inventory = Repo.get! Inventory, id
 
