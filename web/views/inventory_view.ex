@@ -27,4 +27,10 @@ defmodule Loupe.InventoryView do
       updated_at: inventory.updated_at,
     }
   end
+
+  def render("error.json", %{error: error}) do
+    %{
+      error: error
+    }
+  end
 end
